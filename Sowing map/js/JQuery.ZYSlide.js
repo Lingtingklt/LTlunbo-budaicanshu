@@ -4,7 +4,7 @@
     //也就是说只会产生一个轮播，这个函数的作用域只分给一个轮播图
     //所以在调用本函数的时候务必将当前轮播图的标签传递过来
 
-    var slide = function (ele) {
+    var slide = function (ele,Options) {
         var $ele = $(ele);
         //默认的设置选项
         var setting = {
@@ -13,6 +13,8 @@
             //控制time的时间(轮播速度)
             speed: 2000
         };
+        // /合并对象
+        $.extend(true,setting,Options);
         //轮播样式
 
         //规定好每张图片的位置和状态
@@ -76,9 +78,9 @@
             autoPlay();
         })
     }
-    $.fn.WSQSlide=function () {
+    $.fn.WSQSlide=function (Options) {
         $(this).each(function (i,ele) {
-            slide(ele)
+            slide(ele,Options)
         })
         // 支持链式调用
         return this;
