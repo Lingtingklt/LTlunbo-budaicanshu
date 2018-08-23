@@ -26,7 +26,7 @@
             {ZIndex: 1, width: 120,height: 150,top: 69,left: 500,opac: 0.2}
         ];
         //将状态和位置赋给li
-        var lis = $('#box li');
+        var lis = $(ele).find(' li');
 
         function move() {
             lis.each(function (index, ele) {
@@ -70,7 +70,7 @@
         autoPlay();
 
         //停止轮播
-        $('ele').find('section').add(lis).hover(function () {
+        $(ele).find('section').add(lis).hover(function () {
             clearInterval(time);
         }, function () {
             autoPlay();
