@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./css/index.css">
 </head>
 <body>
-    <div class="box">
+    <div class="box one">
 <section class="slide-prev">prev</section>
 <section class="slide-next">next</section>
 <ul>
@@ -21,7 +21,7 @@
     <li><img src="../Sowing map/images/7.jpg" alt="banner-pic"></li>
 </ul>
     </div>
-    <div class="box">
+    <div class="box " id="two">
         <section class="slide-prev">prev</section>
         <section class="slide-next">next</section>
         <ul>
@@ -37,8 +37,11 @@
     <script src="./js/jquery-3.1.1.js"></script>
     <script src="./js/JQuery.ZYSlide.js"></script>
     <script>
-        $('.box').WSQSlide();
-        
+       jQuery.noConflict();
+        // $('.box').WSQSlide({speed:1000}).css("background-color","red");
+        // 只做两个不同的轮播 
+        jQuery('.one').WSQSlide({delay:2000,speed:3000}).css("background-color","red")
+        jQuery('#two').WSQSlide({speed:1000}).css("background-color","blue")
     </script>
 </body>
 </html>

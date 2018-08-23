@@ -80,6 +80,8 @@
         $(this).each(function (i,ele) {
             slide(ele)
         })
+        // 支持链式调用
+        return this;
     }  
 })(jQuery)
 
